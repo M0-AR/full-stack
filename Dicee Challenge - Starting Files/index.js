@@ -16,3 +16,7 @@ console.log(randomNumber2);
 var randomImageSource2 = "images/dice" + randomNumber2 + ".png"; // images/dice1.png - images/dice6.png
 
 document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
+
+
+document.querySelector("h1").innerHTML = (randomNumber1 > randomNumber2) ? "Player 1 Wins!" :
+                                         (randomNumber2 > randomNumber1) ? "Player 2 Wins!" : "Draw!"
