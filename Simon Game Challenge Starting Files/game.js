@@ -36,18 +36,12 @@ function playSound(name) {
     audio.play()
 }
 
-function animatePress(currentColour) {
-    $("#" + currentColour).on('click', function(){
-
-        var self = $(this);
+function animatePress(currentColor) {
+    $("#" + currentColor).addClass("pressed");
     
-        self.addClass("pressed");
-    
-        setTimeout(function(){
-            self.removeClass("pressed");
-        }, 100);
-    
-    });
+    setTimeout(function () {
+        $("#" + currentColor).removeClass("pressed");
+      }, 100);
 }
 
 nextSequence()
