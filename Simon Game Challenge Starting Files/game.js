@@ -13,6 +13,8 @@ $('.btn').on('click',function(){
 
     userClickedPattern.push(userChosenColour)
     console.log(userClickedPattern)
+
+    animatePress(userChosenColour);
 }); 
 
 // Flash and display sound of the button
@@ -32,6 +34,20 @@ function nextSequence() {
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play()
+}
+
+function animatePress(currentColour) {
+    $("#" + currentColour).on('click', function(){
+
+        var self = $(this);
+    
+        self.addClass("pressed");
+    
+        setTimeout(function(){
+            self.removeClass("pressed");
+        }, 100);
+    
+    });
 }
 
 nextSequence()
